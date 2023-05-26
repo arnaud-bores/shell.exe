@@ -1,0 +1,45 @@
+nauard@debian:~$ cd
+nauard@debian:~$ cd -
+/home/nauard
+nauard@debian:~$ cd ..
+nauard@debian:/home$ ls
+nauard
+nauard@debian:/home$ .. cd
+bash: .. : commande introuvable
+nauard@debian:/home$ . cd
+bash: cd: Aucun fichier ou dossier de ce type
+nauard@debian:/home$ cd nauard
+nauard@debian:~$ pwd
+/home/nauard
+nauard@debian:~$ ls
+Bureau  Documents  Images  Job01  Modèles  Musique  Public  Téléchargements  Vidéos
+nauard@debian:~$ ls Job01
+myfirstscript.sh  nb_lignes.txt  tree.save  une_commande.txt
+nauard@debian:~$ sudo
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user] [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-D directory] [-g group] [-h host] [-p prompt] [-R directory] [-T timeout] [-u user] [VAR=value] [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-D directory] [-g group] [-h host] [-p prompt] [-R directory] [-T timeout] [-u user] file ...
+nauard@debian:~$ su -
+Mot de passe : 
+root@debian:~# chmod 760 myfirstscript.sh/Job01
+chmod: impossible d'accéder à 'myfirstscript.sh/Job01': Aucun fichier ou dossier de ce type
+root@debian:~# cd Job01
+-bash: cd: Job01: Aucun fichier ou dossier de ce type
+root@debian:~# exit
+déconnexion
+nauard@debian:~$ cd Job01
+nauard@debian:~/Job01$ sudo chmod 760 myfirstscript.sh
+[sudo] Mot de passe de nauard : 
+Désolé, essayez de nouveau.
+[sudo] Mot de passe de nauard : 
+nauard@debian:~/Job01$ ls -l
+total 14628
+-rwxrw---- 1 nauard nauard       21 23 mai   14:34 myfirstscript.sh
+-rw-r--r-- 1 nauard nauard       25 23 mai   10:52 nb_lignes.txt
+-rw-r--r-- 1 nauard nauard 14965939 23 mai   11:25 tree.save
+-rw-r--r-- 1 nauard nauard       13 23 mai   10:50 une_commande.txt
+nauard@debian:~/Job01$ script ./myfirstscript.sh
+Script démarré, le fichier journal de sortie est « ./myfirstscript.sh ».
+nauard@debian:~/Job01$ 
